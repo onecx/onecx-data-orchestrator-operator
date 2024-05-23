@@ -1,0 +1,19 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: {{ .Release.Name }}-{{ .Values.app.name }}-cluster-role
+rules:
+  - apiGroups:
+      - "onecx.tkit.org"
+    resources:
+      - "datas"
+      - "datas/status"
+      - "datas/finalizers"
+    verbs:
+      - "get"
+      - "list"
+      - "watch"
+      - "patch"
+      - "update"
+      - "create"
+      - "delete"

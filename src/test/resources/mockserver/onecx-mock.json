@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1",
+    "httpRequest": { "method" : "POST", "path": "/workspace" },
+    "httpResponse": { "statusCode": 201 }
+  },
+  {
+    "id": "2",
+    "httpRequest": { "method" : "POST", "path": "/permission" },
+    "httpResponse": { "statusCode": 200 }
+  },
+  {
+    "id": "3",
+    "httpRequest": { "method" : "POST", "path": "/tenant" },
+    "httpResponse": { "statusCode": 500 }
+  },
+  {
+    "id": "4",
+    "httpRequest": { "method" : "POST", "path": "/theme" },
+    "httpResponse": { "statusCode": 400 }
+  }
+]
