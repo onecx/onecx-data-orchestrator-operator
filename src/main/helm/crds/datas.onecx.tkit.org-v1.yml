@@ -30,7 +30,7 @@ spec:
             type: object
           status:
             properties:
-              md5:
+              checksum:
                 type: string
               message:
                 type: string

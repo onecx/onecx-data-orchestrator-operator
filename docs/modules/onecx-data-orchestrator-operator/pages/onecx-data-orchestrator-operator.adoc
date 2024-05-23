@@ -10,6 +10,23 @@ h|[[onecx-data-orchestrator-operator_configuration]]link:#onecx-data-orchestrato
 h|Type
 h|Default
 
+a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-digest]]`link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-digest[onecx.data-orchestrator.digest]`
+
+
+[.description]
+--
+Digest algorithms.
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++ONECX_DATA_ORCHESTRATOR_DIGEST+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++ONECX_DATA_ORCHESTRATOR_DIGEST+++`
+endif::add-copy-button-to-env-var[]
+--|string 
+|`MD5`
+
+
 a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-client-shared]]`link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-client-shared[onecx.data-orchestrator.client.shared]`
 
 

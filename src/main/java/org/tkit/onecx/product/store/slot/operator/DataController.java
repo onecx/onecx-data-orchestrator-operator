@@ -18,7 +18,7 @@ public class DataController implements Reconciler<Data>, ErrorStatusHandler<Data
 
     private static final Logger log = LoggerFactory.getLogger(DataController.class);
 
-    private static final Digest DIGEST = new Digest();
+    private static final CheckSum CHECK_SUM = new CheckSum();
 
     @Inject
     DataService service;
@@ -65,7 +65,7 @@ public class DataController implements Reconciler<Data>, ErrorStatusHandler<Data
     private void updateStatusPojo(Data data, int responseCode) {
         var result = new DataStatus();
         result.setResponseCode(responseCode);
-        result.setMd5(DIGEST.create(data.getSpec().getData()));
+        result.setChecksum(CHECK_SUM.createCheckSum(data.getSpec().getData()));
         var status = switch (responseCode) {
             case 201:
                 yield DataStatus.Status.CREATED;
@@ -108,7 +108,7 @@ public class DataController implements Reconciler<Data>, ErrorStatusHandler<Data
             if (newResource.getSpec().getData() == null || newResource.getSpec().getData().isEmpty()) {
                 return false;
             }
-            return oldResource.getStatus().getMd5().equals(DIGEST.create(newResource.getSpec().getData()));
+            return oldResource.getStatus().getChecksum().equals(CHECK_SUM.createCheckSum(newResource.getSpec().getData()));
         }
     }
 

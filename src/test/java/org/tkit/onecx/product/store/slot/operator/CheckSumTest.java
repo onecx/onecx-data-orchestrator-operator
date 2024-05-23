@@ -6,10 +6,10 @@ import org.junit.jupiter.api.Test;
 import io.quarkus.test.junit.QuarkusTest;
 
 @QuarkusTest
-class DigestTest {
+class CheckSumTest {
 
     @Test
     void wrongAlgoDigest() {
-        Assertions.assertThrows(Digest.DigestException.class, () -> Digest.createDigest("WRONG_NAME"));
+        Assertions.assertThrows(CheckSum.CheckSumException.class, () -> CheckSum.createDigest("WRONG_NAME"));
     }
 }

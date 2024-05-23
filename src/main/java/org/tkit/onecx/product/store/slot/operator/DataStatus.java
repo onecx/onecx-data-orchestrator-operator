@@ -15,8 +15,8 @@ public class DataStatus extends ObservedGenerationAwareStatus {
     @JsonProperty("message")
     private String message;
 
-    @JsonProperty("md5")
-    private String md5;
+    @JsonProperty("checksum")
+    private String checksum;
 
     public enum Status {
 
@@ -29,12 +29,12 @@ public class DataStatus extends ObservedGenerationAwareStatus {
         UNDEFINED;
     }
 
-    public String getMd5() {
-        return md5;
+    public String getChecksum() {
+        return checksum;
     }
 
-    public void setMd5(String md5) {
-        this.md5 = md5;
+    public void setChecksum(String checksum) {
+        this.checksum = checksum;
     }
 
     public int getResponseCode() {
