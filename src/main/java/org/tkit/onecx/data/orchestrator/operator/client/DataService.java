@@ -1,4 +1,4 @@
-package org.tkit.onecx.product.store.slot.operator.client;
+package org.tkit.onecx.data.orchestrator.operator.client;
 
 import java.net.URI;
 
@@ -9,8 +9,8 @@ import org.eclipse.microprofile.rest.client.RestClientBuilder;
 import org.jboss.resteasy.reactive.client.api.QuarkusRestClientProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.tkit.onecx.product.store.slot.operator.Data;
-import org.tkit.onecx.product.store.slot.operator.DataSpec;
+import org.tkit.onecx.data.orchestrator.operator.Data;
+import org.tkit.onecx.data.orchestrator.operator.DataSpec;
 
 @ApplicationScoped
 public class DataService {

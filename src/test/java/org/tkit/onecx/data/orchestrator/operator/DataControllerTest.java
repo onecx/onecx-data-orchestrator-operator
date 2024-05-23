@@ -1,4 +1,4 @@
-package org.tkit.onecx.product.store.slot.operator;
+package org.tkit.onecx.data.orchestrator.operator;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
 import static org.assertj.core.api.Assertions.assertThat;

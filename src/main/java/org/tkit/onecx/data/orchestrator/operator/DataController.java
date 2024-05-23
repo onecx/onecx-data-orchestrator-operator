@@ -1,24 +1,29 @@
-package org.tkit.onecx.product.store.slot.operator;
+package org.tkit.onecx.data.orchestrator.operator;
 
 import static io.javaoperatorsdk.operator.api.reconciler.Constants.WATCH_CURRENT_NAMESPACE;
 
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 import jakarta.inject.Inject;
 import jakarta.ws.rs.WebApplicationException;
+import jakarta.xml.bind.DatatypeConverter;
 
+import org.eclipse.microprofile.config.ConfigProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.tkit.onecx.product.store.slot.operator.client.DataService;
+import org.tkit.onecx.data.orchestrator.operator.client.DataService;
 
 import io.javaoperatorsdk.operator.api.reconciler.*;
 import io.javaoperatorsdk.operator.processing.event.source.filter.OnAddFilter;
 import io.javaoperatorsdk.operator.processing.event.source.filter.OnUpdateFilter;
+import io.smallrye.config.SmallRyeConfig;
 
 @ControllerConfiguration(name = "data", namespaces = WATCH_CURRENT_NAMESPACE, onAddFilter = DataController.SlotAddFilter.class, onUpdateFilter = DataController.SlotUpdateFilter.class)
 public class DataController implements Reconciler<Data>, ErrorStatusHandler<Data> {
 
     private static final Logger log = LoggerFactory.getLogger(DataController.class);
-
-    private static final CheckSum CHECK_SUM = new CheckSum();
 
     @Inject
     DataService service;
@@ -65,7 +70,7 @@ public class DataController implements Reconciler<Data>, ErrorStatusHandler<Data
     private void updateStatusPojo(Data data, int responseCode) {
         var result = new DataStatus();
         result.setResponseCode(responseCode);
-        result.setChecksum(CHECK_SUM.createCheckSum(data.getSpec().getData()));
+        result.setChecksum(createCheckSum(data.getSpec().getData()));
         var status = switch (responseCode) {
             case 201:
                 yield DataStatus.Status.CREATED;
@@ -108,8 +113,30 @@ public class DataController implements Reconciler<Data>, ErrorStatusHandler<Data
             if (newResource.getSpec().getData() == null || newResource.getSpec().getData().isEmpty()) {
                 return false;
             }
-            return oldResource.getStatus().getChecksum().equals(CHECK_SUM.createCheckSum(newResource.getSpec().getData()));
+            return oldResource.getStatus().getChecksum()
+                    .equals(createCheckSum(newResource.getSpec().getData()));
         }
     }
 
+    static MessageDigest createDigest(String name) {
+        try {
+            return MessageDigest.getInstance(name);
+        } catch (NoSuchAlgorithmException e) {
+            throw new CheckSumException(e);
+        }
+    }
+
+    static String createCheckSum(String data) {
+        var config = ConfigProvider.getConfig().unwrap(SmallRyeConfig.class).getConfigMapping(DataConfig.class);
+        var digest = createDigest(config.digest());
+        byte[] hash = digest.digest(data.getBytes(StandardCharsets.UTF_8));
+        return DatatypeConverter.printHexBinary(hash).toUpperCase();
+    }
+
+    static class CheckSumException extends RuntimeException {
+
+        public CheckSumException(Throwable e) {
+            super("Error create check-sum from the data content", e);
+        }
+    }
 }

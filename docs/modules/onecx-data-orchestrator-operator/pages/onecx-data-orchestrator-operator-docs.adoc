@@ -52,3 +52,7 @@ app:
 watchNamespaces: "JOSDK_WATCH_CURRENT"
 ----
 
+ACES or comma separated list of namespaces
+watchNamespaces: "JOSDK_WATCH_CURRENT"
+----
+

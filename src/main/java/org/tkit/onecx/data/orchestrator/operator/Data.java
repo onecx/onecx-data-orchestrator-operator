@@ -1,4 +1,4 @@
-package org.tkit.onecx.product.store.slot.operator;
+package org.tkit.onecx.data.orchestrator.operator;
 
 import io.fabric8.kubernetes.api.model.Namespaced;
 import io.fabric8.kubernetes.client.CustomResource;

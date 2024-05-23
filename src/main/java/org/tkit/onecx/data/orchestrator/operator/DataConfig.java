@@ -1,9 +1,6 @@
-package org.tkit.onecx.product.store.slot.operator;
+package org.tkit.onecx.data.orchestrator.operator;
 
-import io.quarkus.runtime.annotations.ConfigDocFilename;
-import io.quarkus.runtime.annotations.ConfigPhase;
-import io.quarkus.runtime.annotations.ConfigRoot;
-import io.quarkus.runtime.annotations.StaticInitSafe;
+import io.quarkus.runtime.annotations.*;
 import io.smallrye.config.ConfigMapping;
 import io.smallrye.config.WithDefault;
 import io.smallrye.config.WithName;

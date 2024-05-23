@@ -1,4 +1,4 @@
-package org.tkit.onecx.product.store.slot.operator.client;
+package org.tkit.onecx.data.orchestrator.operator.client;
 
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Produces;

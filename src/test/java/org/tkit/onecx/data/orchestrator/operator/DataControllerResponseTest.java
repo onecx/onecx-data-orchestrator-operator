@@ -1,14 +1,16 @@
-package org.tkit.onecx.product.store.slot.operator;
+package org.tkit.onecx.data.orchestrator.operator;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
+import static org.tkit.onecx.data.orchestrator.operator.DataController.createDigest;
 
 import jakarta.inject.Inject;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import org.tkit.onecx.product.store.slot.operator.client.DataService;
+import org.tkit.onecx.data.orchestrator.operator.client.DataService;
 
 import io.javaoperatorsdk.operator.api.reconciler.UpdateControl;
 import io.quarkus.test.InjectMock;
@@ -26,6 +28,11 @@ class DataControllerResponseTest extends AbstractTest {
     @BeforeEach
     void beforeAll() {
         Mockito.when(dataService.updateData(any())).thenReturn(404);
+    }
+
+    @Test
+    void wrongAlgoDigest() {
+        Assertions.assertThrows(DataController.CheckSumException.class, () -> createDigest("WRONG_NAME"));
     }
 
     @Test

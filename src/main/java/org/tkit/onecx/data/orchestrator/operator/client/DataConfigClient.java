@@ -1,4 +1,4 @@
-package org.tkit.onecx.product.store.slot.operator.client;
+package org.tkit.onecx.data.orchestrator.operator.client;
 
 import java.util.Map;
 
