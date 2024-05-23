@@ -1,0 +1,58 @@
+
+include::onecx-data-orchestrator-operator-attributes.adoc[opts=optional]
+
+=== Default properties
+
+.{properties-file}
+[%collapsible%open]
+====
+[source,properties,subs=attributes+]
+----
+onecx.data-orchestrator.client.key.workspace=http://onecx-workspace-svc:8080/data/v1
+onecx.data-orchestrator.client.key.theme=http://onecx-theme-svc:8080/data/v1
+onecx.data-orchestrator.client.key.tenant=http://onecx-tenant-svc:8080/data/v1
+onecx.data-orchestrator.client.key.permission=http://onecx-permission-svc:8080/data/v1
+quarkus.operator-sdk.controllers.microservice.namespaces=JOSDK_WATCH_CURRENT
+quarkus.operator-sdk.helm.enabled=true
+quarkus.kubernetes-client.devservices.override-kubeconfig=true
+----
+====
+
+=== Extensions
+
+include::onecx-data-orchestrator-operator-extensions.adoc[opts=optional]
+
+=== Container
+
+{docker-registry}[Docker registry]
+
+
+=== Helm
+
+{helm-registry}[Helm registry]
+
+Default values
+
+.{helm-file}
+[source,yaml]
+----
+app:
+  name: operator
+  image:
+    repository: "onecx/onecx-data-orchestrator-operator"
+  envCustom:
+    - name: KUBERNETES_NAMESPACE
+      valueFrom:
+        fieldRef:
+          fieldPath: metadata.namespace
+  serviceAccount:
+    enabled: true
+
+# Values: JOSDK_WATCH_CURRENT, JOSDK_ALL_NAMESPACES or comma separated list of namespaces
+watchNamespaces: "JOSDK_WATCH_CURRENT"
+----
+
+ACES or comma separated list of namespaces
+watchNamespaces: "JOSDK_WATCH_CURRENT"
+----
+

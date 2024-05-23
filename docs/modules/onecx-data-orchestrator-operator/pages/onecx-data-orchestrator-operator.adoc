@@ -1,0 +1,80 @@
+
+:summaryTableId: onecx-data-orchestrator-operator
+[.configuration-legend]
+icon:lock[title=Fixed at build time] Configuration property fixed at build time - All other configuration properties are overridable at runtime
+[.configuration-reference.searchable, cols="80,.^10,.^10"]
+|===
+
+h|[[onecx-data-orchestrator-operator_configuration]]link:#onecx-data-orchestrator-operator_configuration[Configuration property]
+
+h|Type
+h|Default
+
+a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-digest]]`link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-digest[onecx.data-orchestrator.digest]`
+
+
+[.description]
+--
+Digest algorithms.
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++ONECX_DATA_ORCHESTRATOR_DIGEST+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++ONECX_DATA_ORCHESTRATOR_DIGEST+++`
+endif::add-copy-button-to-env-var[]
+--|string 
+|`MD5`
+
+
+a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-client-shared]]`link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-client-shared[onecx.data-orchestrator.client.shared]`
+
+
+[.description]
+--
+Set to true to share the HTTP client between REST clients.
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++ONECX_DATA_ORCHESTRATOR_CLIENT_SHARED+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++ONECX_DATA_ORCHESTRATOR_CLIENT_SHARED+++`
+endif::add-copy-button-to-env-var[]
+--|boolean 
+|`true`
+
+
+a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-client-connection-pool-size]]`link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-client-connection-pool-size[onecx.data-orchestrator.client.connection-pool-size]`
+
+
+[.description]
+--
+The size of the rest client connection pool.
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++ONECX_DATA_ORCHESTRATOR_CLIENT_CONNECTION_POOL_SIZE+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++ONECX_DATA_ORCHESTRATOR_CLIENT_CONNECTION_POOL_SIZE+++`
+endif::add-copy-button-to-env-var[]
+--|int 
+|`30`
+
+
+a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-client-key-keys]]`link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-client-key-keys[onecx.data-orchestrator.client.key]`
+
+
+[.description]
+--
+Clients key configuration
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++ONECX_DATA_ORCHESTRATOR_CLIENT_KEY+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++ONECX_DATA_ORCHESTRATOR_CLIENT_KEY+++`
+endif::add-copy-button-to-env-var[]
+--|`Map<String,String>` 
+|
+
+|===
