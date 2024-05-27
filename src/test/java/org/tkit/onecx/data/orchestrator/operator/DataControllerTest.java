@@ -72,6 +72,7 @@ class DataControllerTest extends AbstractTest {
         spec.setKey(key);
         spec.setDescription("description");
         spec.setData(data);
+        spec.setOrgId("default");
         return spec;
     }
 

@@ -11,20 +11,20 @@ h| Version
 | tkit-quarkus-log-cdi
 
 | https://1000kit.github.io/tkit-quarkus/current/tkit-quarkus/tkit-quarkus-log-cdi.html[Link]
-| https://github.com/1000kit/tkit-quarkus/blob/2.22.0/docs/modules/tkit-quarkus/pages/includes/tkit-quarkus-log-cdi.adoc[Link]
-| 2.22.0
+| https://github.com/1000kit/tkit-quarkus/blob/2.23.0/docs/modules/tkit-quarkus/pages/includes/tkit-quarkus-log-cdi.adoc[Link]
+| 2.23.0
 
 | tkit-quarkus-log-rs
 
 | https://1000kit.github.io/tkit-quarkus/current/tkit-quarkus/tkit-quarkus-log-rs.html[Link]
-| https://github.com/1000kit/tkit-quarkus/blob/2.22.0/docs/modules/tkit-quarkus/pages/includes/tkit-quarkus-log-rs.adoc[Link]
-| 2.22.0
+| https://github.com/1000kit/tkit-quarkus/blob/2.23.0/docs/modules/tkit-quarkus/pages/includes/tkit-quarkus-log-rs.adoc[Link]
+| 2.23.0
 
 | tkit-quarkus-log-json
 
 | https://1000kit.github.io/tkit-quarkus/current/tkit-quarkus/tkit-quarkus-log-json.html[Link]
-| https://github.com/1000kit/tkit-quarkus/blob/2.22.0/docs/modules/tkit-quarkus/pages/includes/tkit-quarkus-log-json.adoc[Link]
-| 2.22.0
+| https://github.com/1000kit/tkit-quarkus/blob/2.23.0/docs/modules/tkit-quarkus/pages/includes/tkit-quarkus-log-json.adoc[Link]
+| 2.23.0
 
 | quarkus-arc
 
