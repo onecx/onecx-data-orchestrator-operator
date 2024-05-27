@@ -6,6 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DataSpec {
 
+    @JsonProperty("orgId")
+    private String orgId;
+
     @JsonProperty("key")
     private String key;
 
@@ -20,6 +23,14 @@ public class DataSpec {
 
     @JsonProperty("data")
     private String data;
+
+    public String getOrgId() {
+        return orgId;
+    }
+
+    public void setOrgId(String orgId) {
+        this.orgId = orgId;
+    }
 
     public String getData() {
         return data;

@@ -1,5 +1,0 @@
-
-:docker-registry: https://github.com/onecx/onecx-product-store-slot-operator/pkgs/container/onecx-product-store-slot-operator
-:helm-registry: https://github.com/onecx/onecx-product-store-slot-operator/pkgs/container/charts%2Fonecx-product-store-slot-operator
-:properties-file: src/main/resources/application.properties
-:helm-file: src/main/helm/values.yaml

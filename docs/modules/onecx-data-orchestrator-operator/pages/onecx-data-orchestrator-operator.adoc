@@ -27,6 +27,57 @@ endif::add-copy-button-to-env-var[]
 |`MD5`
 
 
+a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-token-user-name]]`link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-token-user-name[onecx.data-orchestrator.token.user-name]`
+
+
+[.description]
+--
+Username for rest call.
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++ONECX_DATA_ORCHESTRATOR_TOKEN_USER_NAME+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++ONECX_DATA_ORCHESTRATOR_TOKEN_USER_NAME+++`
+endif::add-copy-button-to-env-var[]
+--|string 
+|`data-orchestrator-operator`
+
+
+a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-token-header-param]]`link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-token-header-param[onecx.data-orchestrator.token.header-param]`
+
+
+[.description]
+--
+Token header parameter.
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++ONECX_DATA_ORCHESTRATOR_TOKEN_HEADER_PARAM+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++ONECX_DATA_ORCHESTRATOR_TOKEN_HEADER_PARAM+++`
+endif::add-copy-button-to-env-var[]
+--|string 
+|`apm-principal-token`
+
+
+a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-token-claim-organization-param]]`link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-token-claim-organization-param[onecx.data-orchestrator.token.claim-organization-param]`
+
+
+[.description]
+--
+Token claim organization parameter.
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++ONECX_DATA_ORCHESTRATOR_TOKEN_CLAIM_ORGANIZATION_PARAM+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++ONECX_DATA_ORCHESTRATOR_TOKEN_CLAIM_ORGANIZATION_PARAM+++`
+endif::add-copy-button-to-env-var[]
+--|string 
+|`orgId`
+
+
 a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-client-shared]]`link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-client-shared[onecx.data-orchestrator.client.shared]`
 
 
