@@ -18,7 +18,8 @@ class KeyFactoryTest extends AbstractTest {
     void createKeyFailedTest() throws NoSuchAlgorithmException {
         var mock = Mockito.mock(KeyFactory.class);
         Mockito.when(mock.createPrivateKey()).thenThrow(new NoSuchAlgorithmException());
-        RuntimeException throwable = catchThrowableOfType(() -> KeyFactory.createKey(mock), RuntimeException.class);
+        KeyFactory.KeyFactoryException throwable = catchThrowableOfType(() -> KeyFactory.createKey(mock),
+                KeyFactory.KeyFactoryException.class);
         assertThat(throwable).isNotNull();
     }
 }
