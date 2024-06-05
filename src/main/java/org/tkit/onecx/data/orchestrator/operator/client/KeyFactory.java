@@ -3,8 +3,16 @@ package org.tkit.onecx.data.orchestrator.operator.client;
 import java.security.NoSuchAlgorithmException;
 import java.security.PrivateKey;
 
+import org.tkit.quarkus.log.rs.RestClientLogInterceptor;
+import org.tkit.quarkus.log.rs.RestClientPayloadInterceptor;
+
+import io.quarkus.runtime.annotations.RegisterForReflection;
 import io.smallrye.jwt.util.KeyUtils;
 
+@RegisterForReflection(targets = {
+        RestClientLogInterceptor.class,
+        RestClientPayloadInterceptor.class,
+})
 class KeyFactory {
 
     static final PrivateKey PRIVATE_KEY = createKey();

@@ -68,9 +68,13 @@ class DataControllerTest extends AbstractTest {
     }
 
     private static DataSpec createSpec(String key, String data) {
+        return createSpec(key, data, "description");
+    }
+
+    private static DataSpec createSpec(String key, String data, String description) {
         DataSpec spec = new DataSpec();
         spec.setKey(key);
-        spec.setDescription("description");
+        spec.setDescription(description);
         spec.setData(data);
         spec.setOrgId("default");
         return spec;
@@ -183,14 +187,59 @@ class DataControllerTest extends AbstractTest {
         });
     }
 
+    @Test
+    void dataUpdateErrorSpecTest() {
+
+        operator.start();
+
+        var spec = new DataSpec();
+        spec.setData("workspace");
+        spec.setKey("does-not-exists");
+
+        Data data = new Data();
+        data.setMetadata(
+                new ObjectMetaBuilder().withName("does-not-exists-key-spec").withNamespace(client.getNamespace()).build());
+        data.setSpec(spec);
+
+        client.resource(data).serverSideApply();
+
+        await().pollDelay(2, SECONDS).untilAsserted(() -> {
+            DataStatus mfeStatus = client.resource(data).get().getStatus();
+            assertThat(mfeStatus).isNotNull();
+            assertThat(mfeStatus.getStatus()).isNotNull().isEqualTo(DataStatus.Status.ERROR);
+            assertThat(mfeStatus.getMessage()).isNotNull().isEqualTo("Missing configuration for key does-not-exists");
+        });
+
+        var m = new DataSpec();
+        m.setAppId("test-1");
+        m.setProductName("product-test");
+        m.setKey("workspace");
+        m.setData("{}");
+
+        client.resource(data).inNamespace(client.getNamespace())
+                .edit(s -> {
+                    s.setSpec(m);
+                    return s;
+                });
+
+        await().pollDelay(4, SECONDS).untilAsserted(() -> {
+            DataStatus mfeStatus = client.resource(data).get().getStatus();
+            assertThat(mfeStatus).isNotNull();
+            assertThat(mfeStatus.getStatus()).isNotNull().isEqualTo(DataStatus.Status.CREATED);
+        });
+    }
+
     private static Stream<Arguments> provideUpdateData() {
         return Stream.of(
                 Arguments.of("test-update-1", createSpec("workspace", "{\"items\":[]}"), createSpec(null, "{\"items\":[]}")),
                 Arguments.of("test-update-2", createSpec("workspace", "{\"items\":[]}"), createSpec("", "{\"items\":[]}")),
                 Arguments.of("test-update-21", createSpec("workspace", "{\"items\":[]}"),
                         createSpec("workspace", "{\"items\": [ {} ]}")),
+                Arguments.of("test-update-3-1", createSpec("workspace", "{\"items\":[]}", "test1"),
+                        createSpec("workspace", "{\"items\":[]}", "test-2")),
                 Arguments.of("test-update-3", createSpec("workspace", "{\"items\":[]}"), createSpec("workspace", null)),
                 Arguments.of("test-update-4", createSpec("workspace", "{\"items\":[]}"), createSpec("workspace", "")));
+
     }
 
     @ParameterizedTest
