@@ -53,6 +53,7 @@ public class DataController implements Reconciler<Data>, ErrorStatusHandler<Data
         String message = e.getMessage();
         if (e.getCause() instanceof WebApplicationException re) {
             responseCode = re.getResponse().getStatus();
+            message = re.getResponse().readEntity(String.class);
         }
         if (e.getCause() instanceof DataService.MissingKeyConfiguration me) {
             message = me.getMessage();
