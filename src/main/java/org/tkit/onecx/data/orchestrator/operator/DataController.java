@@ -114,8 +114,13 @@ public class DataController implements Reconciler<Data>, ErrorStatusHandler<Data
             if (newResource.getSpec().getData() == null || newResource.getSpec().getData().isEmpty()) {
                 return false;
             }
-            return oldResource.getStatus().getChecksum()
-                    .equals(createCheckSum(newResource.getSpec().getData()));
+            if (oldResource.getStatus() == null) {
+                return true;
+            }
+            if (oldResource.getStatus().getChecksum() == null) {
+                return true;
+            }
+            return !oldResource.getStatus().getChecksum().equals(createCheckSum(newResource.getSpec().getData()));
         }
     }
 
