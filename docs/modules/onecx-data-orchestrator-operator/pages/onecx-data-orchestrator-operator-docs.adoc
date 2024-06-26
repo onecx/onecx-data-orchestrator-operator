@@ -12,7 +12,7 @@ onecx.data-orchestrator.client.key.workspace=http://onecx-workspace-svc:8080/dat
 onecx.data-orchestrator.client.key.theme=http://onecx-theme-svc:8080/data/v1
 onecx.data-orchestrator.client.key.tenant=http://onecx-tenant-svc:8080/exim/v1/tenants/operator
 onecx.data-orchestrator.client.key.permission=http://onecx-permission-svc:8080/data/v1
-quarkus.operator-sdk.controllers.microservice.namespaces=JOSDK_WATCH_CURRENT
+quarkus.operator-sdk.controllers.data.namespaces=JOSDK_WATCH_CURRENT
 quarkus.operator-sdk.helm.enabled=true
 quarkus.kubernetes-client.devservices.override-kubeconfig=true
 ----
@@ -50,5 +50,8 @@ app:
 
 # Values: JOSDK_WATCH_CURRENT, JOSDK_ALL_NAMESPACES or comma separated list of namespaces
 watchNamespaces: "JOSDK_WATCH_CURRENT"
+----
+
+"
 ----
 
