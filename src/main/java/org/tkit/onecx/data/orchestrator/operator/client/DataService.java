@@ -17,6 +17,7 @@ import org.tkit.onecx.data.orchestrator.operator.Data;
 import org.tkit.onecx.data.orchestrator.operator.DataConfig;
 import org.tkit.onecx.data.orchestrator.operator.DataSpec;
 
+import io.quarkus.oidc.client.reactive.filter.OidcClientRequestReactiveFilter;
 import io.quarkus.rest.client.reactive.QuarkusRestClientBuilder;
 import io.quarkus.rest.client.reactive.ReactiveClientHeadersFactory;
 import io.smallrye.jwt.build.Jwt;
@@ -44,6 +45,7 @@ public class DataService {
                 .property(QuarkusRestClientProperties.CONNECTION_POOL_SIZE, config.client().connectionPoolSize())
                 .property(QuarkusRestClientProperties.NAME, spec.getKey())
                 .property(QuarkusRestClientProperties.SHARED, config.client().shared())
+                .register(OidcClientRequestReactiveFilter.class)
                 .clientHeadersFactory(new ReactiveClientHeadersFactory() {
                     @Override
                     public Uni<MultivaluedMap<String, String>> getHeaders(MultivaluedMap<String, String> incomingHeaders,

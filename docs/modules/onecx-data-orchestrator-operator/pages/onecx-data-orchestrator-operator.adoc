@@ -112,7 +112,7 @@ endif::add-copy-button-to-env-var[]
 |`30`
 
 
-a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-client-key-keys]]`link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-client-key-keys[onecx.data-orchestrator.client.key]`
+a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-client-key-keys]]`link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-client-key-keys[onecx.data-orchestrator.client.key."keys"]`
 
 
 [.description]
@@ -120,12 +120,13 @@ a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-client-key-keys]]`
 Clients key configuration
 
 ifdef::add-copy-button-to-env-var[]
-Environment variable: env_var_with_copy_button:+++ONECX_DATA_ORCHESTRATOR_CLIENT_KEY+++[]
+Environment variable: env_var_with_copy_button:+++ONECX_DATA_ORCHESTRATOR_CLIENT_KEY__KEYS_+++[]
 endif::add-copy-button-to-env-var[]
 ifndef::add-copy-button-to-env-var[]
-Environment variable: `+++ONECX_DATA_ORCHESTRATOR_CLIENT_KEY+++`
+Environment variable: `+++ONECX_DATA_ORCHESTRATOR_CLIENT_KEY__KEYS_+++`
 endif::add-copy-button-to-env-var[]
---|`Map<String,String>` 
+--|link:https://docs.oracle.com/javase/8/docs/api/java/lang/String.html[String]
+ 
 |
 
 |===
