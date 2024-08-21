@@ -78,6 +78,23 @@ endif::add-copy-button-to-env-var[]
 |`orgId`
 
 
+a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-token-claim-organization-param-array]]`link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-token-claim-organization-param-array[onecx.data-orchestrator.token.claim-organization-param-array]`
+
+
+[.description]
+--
+Token claim organization parameter array.
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++ONECX_DATA_ORCHESTRATOR_TOKEN_CLAIM_ORGANIZATION_PARAM_ARRAY+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++ONECX_DATA_ORCHESTRATOR_TOKEN_CLAIM_ORGANIZATION_PARAM_ARRAY+++`
+endif::add-copy-button-to-env-var[]
+--|boolean 
+|`false`
+
+
 a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-client-shared]]`link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-client-shared[onecx.data-orchestrator.client.shared]`
 
 

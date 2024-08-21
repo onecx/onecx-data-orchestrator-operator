@@ -84,5 +84,12 @@ public interface DataConfig {
         @WithDefault("orgId")
         String claimOrganizationParam();
 
+        /**
+         * Token claim organization parameter array.
+         */
+        @WithName("claim-organization-param-array")
+        @WithDefault("false")
+        boolean claimOrganizationParamArray();
+
     }
 }

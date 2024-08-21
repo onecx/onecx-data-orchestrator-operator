@@ -26,6 +26,9 @@ import io.quarkus.test.junit.QuarkusTest;
 class DataControllerTest extends AbstractTest {
 
     static final Logger log = LoggerFactory.getLogger(DataControllerTest.class);
+    public static final String WORKSPACE = "workspace";
+    public static final String THEME = "theme";
+    public static final String TEST_1 = "test-1";
 
     @Inject
     Operator operator;
@@ -61,10 +64,10 @@ class DataControllerTest extends AbstractTest {
 
     private static Stream<Arguments> provideTestData() {
         return Stream.of(
-                Arguments.of("test-1", createSpec("workspace", "{\"items\":[]}"), DataStatus.Status.CREATED),
-                Arguments.of("test-3", createSpec("permission", "{\"items\":[]}"), DataStatus.Status.UPDATED),
-                Arguments.of("test-error-1", createSpec("tenant", "{\"items\":[]}"), DataStatus.Status.ERROR),
-                Arguments.of("test-error-2", createSpec("theme", "{\"items\":[]}"), DataStatus.Status.ERROR));
+                Arguments.of(TEST_1, createSpec(WORKSPACE, "{\"items1\":[]}"), DataStatus.Status.CREATED),
+                Arguments.of("test-3", createSpec("permission", "{\"items2\":[]}"), DataStatus.Status.UPDATED),
+                Arguments.of("test-error-1", createSpec("tenant", "{\"items3\":[]}"), DataStatus.Status.ERROR),
+                Arguments.of("test-error-2", createSpec(THEME, "{\"items4\":[]}"), DataStatus.Status.ERROR));
     }
 
     private static DataSpec createSpec(String key, String data) {
@@ -102,8 +105,8 @@ class DataControllerTest extends AbstractTest {
         return Stream.of(
                 Arguments.of("test-wrong-1", createSpec(null, "{\"items\":[]}")),
                 Arguments.of("test-wrong-2", createSpec("", "{\"items\":[]}")),
-                Arguments.of("test-wrong-3", createSpec("theme", null)),
-                Arguments.of("test-wrong-4", createSpec("theme", "")));
+                Arguments.of("test-wrong-3", createSpec(THEME, null)),
+                Arguments.of("test-wrong-4", createSpec(THEME, "")));
     }
 
     @Test
@@ -112,7 +115,7 @@ class DataControllerTest extends AbstractTest {
         operator.start();
 
         var spec = new DataSpec();
-        spec.setData("workspace");
+        spec.setData(WORKSPACE);
         spec.setKey("does-not-exists");
 
         Data data = new Data();
@@ -154,9 +157,9 @@ class DataControllerTest extends AbstractTest {
         operator.start();
 
         var m = new DataSpec();
-        m.setAppId("test-1");
+        m.setAppId(TEST_1);
         m.setProductName("product-test");
-        m.setKey("workspace");
+        m.setKey(WORKSPACE);
         m.setData("{}");
 
         Data data = new Data();
@@ -193,7 +196,7 @@ class DataControllerTest extends AbstractTest {
         operator.start();
 
         var spec = new DataSpec();
-        spec.setData("workspace");
+        spec.setData(WORKSPACE);
         spec.setKey("does-not-exists");
 
         Data data = new Data();
@@ -211,9 +214,9 @@ class DataControllerTest extends AbstractTest {
         });
 
         var m = new DataSpec();
-        m.setAppId("test-1");
+        m.setAppId(TEST_1);
         m.setProductName("product-test");
-        m.setKey("workspace");
+        m.setKey(WORKSPACE);
         m.setData("{}");
 
         client.resource(data).inNamespace(client.getNamespace())
@@ -231,14 +234,14 @@ class DataControllerTest extends AbstractTest {
 
     private static Stream<Arguments> provideUpdateData() {
         return Stream.of(
-                Arguments.of("test-update-1", createSpec("workspace", "{\"items\":[]}"), createSpec(null, "{\"items\":[]}")),
-                Arguments.of("test-update-2", createSpec("workspace", "{\"items\":[]}"), createSpec("", "{\"items\":[]}")),
-                Arguments.of("test-update-21", createSpec("workspace", "{\"items\":[]}"),
-                        createSpec("workspace", "{\"items\": [ {} ]}")),
-                Arguments.of("test-update-3-1", createSpec("workspace", "{\"items\":[]}", "test1"),
-                        createSpec("workspace", "{\"items\":[]}", "test-2")),
-                Arguments.of("test-update-3", createSpec("workspace", "{\"items\":[]}"), createSpec("workspace", null)),
-                Arguments.of("test-update-4", createSpec("workspace", "{\"items\":[]}"), createSpec("workspace", "")));
+                Arguments.of("test-update-1", createSpec(WORKSPACE, "{\"items\":[]}"), createSpec(null, "{\"items\":[]}")),
+                Arguments.of("test-update-2", createSpec(WORKSPACE, "{\"items\":[]}"), createSpec("", "{\"items\":[]}")),
+                Arguments.of("test-update-21", createSpec(WORKSPACE, "{\"items\":[]}"),
+                        createSpec(WORKSPACE, "{\"items\": [ {} ]}")),
+                Arguments.of("test-update-3-1", createSpec(WORKSPACE, "{\"items\":[]}", "test1"),
+                        createSpec(WORKSPACE, "{\"items\":[]}", "test-2")),
+                Arguments.of("test-update-3", createSpec(WORKSPACE, "{\"items\":[]}"), createSpec(WORKSPACE, null)),
+                Arguments.of("test-update-4", createSpec(WORKSPACE, "{\"items\":[]}"), createSpec(WORKSPACE, "")));
 
     }
 

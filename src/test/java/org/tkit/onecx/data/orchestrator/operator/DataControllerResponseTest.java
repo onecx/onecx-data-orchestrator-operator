@@ -31,7 +31,7 @@ class DataControllerResponseTest extends AbstractTest {
     }
 
     @Test
-    void wrongAlgoDigest() {
+    void wrongAlgoDigestTest() {
         Assertions.assertThrows(DataController.CheckSumException.class, () -> createDigest("WRONG_NAME"));
     }
 

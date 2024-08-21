@@ -72,7 +72,11 @@ public class DataService {
         claims.add(Claims.preferred_username.name(), userName);
         claims.add(Claims.sub.name(), userName);
         if (orgId != null) {
-            claims.add(config.token().claimOrganizationParam(), orgId);
+            if (config.token().claimOrganizationParamArray()) {
+                claims.add(config.token().claimOrganizationParam(), Json.createArrayBuilder().add(orgId));
+            } else {
+                claims.add(config.token().claimOrganizationParam(), orgId);
+            }
         }
         return Jwt.claims(claims.build()).sign(KeyFactory.PRIVATE_KEY);
     }
