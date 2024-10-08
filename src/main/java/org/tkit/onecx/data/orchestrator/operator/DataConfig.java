@@ -33,6 +33,12 @@ public interface DataConfig {
     ConfigClient client();
 
     /**
+     * Leader election configuration
+     */
+    @WithName("leader-election")
+    LeaderElectionConfig leaderElectionConfig();
+
+    /**
      * Client configuration.
      */
     interface ConfigClient {
@@ -91,5 +97,18 @@ public interface DataConfig {
         @WithDefault("false")
         boolean claimOrganizationParamArray();
 
+    }
+
+    /**
+     * Leader election config
+     */
+    interface LeaderElectionConfig {
+
+        /**
+         * Lease name
+         */
+        @WithName("lease-name")
+        @WithDefault("onecx-data-orchestrator-operator-lease")
+        String leaseName();
     }
 }

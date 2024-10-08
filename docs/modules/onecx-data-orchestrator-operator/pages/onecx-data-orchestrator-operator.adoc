@@ -1,21 +1,19 @@
-
 :summaryTableId: onecx-data-orchestrator-operator
 [.configuration-legend]
 icon:lock[title=Fixed at build time] Configuration property fixed at build time - All other configuration properties are overridable at runtime
 [.configuration-reference.searchable, cols="80,.^10,.^10"]
 |===
 
-h|[[onecx-data-orchestrator-operator_configuration]]link:#onecx-data-orchestrator-operator_configuration[Configuration property]
-
+h|[.header-title]##Configuration property##
 h|Type
 h|Default
 
-a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-digest]]`link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-digest[onecx.data-orchestrator.digest]`
-
+a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-digest]] [.property-path]##link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-digest[`onecx.data-orchestrator.digest`]##
 
 [.description]
 --
 Digest algorithms.
+
 
 ifdef::add-copy-button-to-env-var[]
 Environment variable: env_var_with_copy_button:+++ONECX_DATA_ORCHESTRATOR_DIGEST+++[]
@@ -23,16 +21,16 @@ endif::add-copy-button-to-env-var[]
 ifndef::add-copy-button-to-env-var[]
 Environment variable: `+++ONECX_DATA_ORCHESTRATOR_DIGEST+++`
 endif::add-copy-button-to-env-var[]
---|string 
+--
+|string
 |`MD5`
 
-
-a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-token-user-name]]`link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-token-user-name[onecx.data-orchestrator.token.user-name]`
-
+a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-token-user-name]] [.property-path]##link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-token-user-name[`onecx.data-orchestrator.token.user-name`]##
 
 [.description]
 --
 Username for rest call.
+
 
 ifdef::add-copy-button-to-env-var[]
 Environment variable: env_var_with_copy_button:+++ONECX_DATA_ORCHESTRATOR_TOKEN_USER_NAME+++[]
@@ -40,16 +38,16 @@ endif::add-copy-button-to-env-var[]
 ifndef::add-copy-button-to-env-var[]
 Environment variable: `+++ONECX_DATA_ORCHESTRATOR_TOKEN_USER_NAME+++`
 endif::add-copy-button-to-env-var[]
---|string 
+--
+|string
 |`data-orchestrator-operator`
 
-
-a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-token-header-param]]`link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-token-header-param[onecx.data-orchestrator.token.header-param]`
-
+a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-token-header-param]] [.property-path]##link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-token-header-param[`onecx.data-orchestrator.token.header-param`]##
 
 [.description]
 --
 Token header parameter.
+
 
 ifdef::add-copy-button-to-env-var[]
 Environment variable: env_var_with_copy_button:+++ONECX_DATA_ORCHESTRATOR_TOKEN_HEADER_PARAM+++[]
@@ -57,16 +55,16 @@ endif::add-copy-button-to-env-var[]
 ifndef::add-copy-button-to-env-var[]
 Environment variable: `+++ONECX_DATA_ORCHESTRATOR_TOKEN_HEADER_PARAM+++`
 endif::add-copy-button-to-env-var[]
---|string 
+--
+|string
 |`apm-principal-token`
 
-
-a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-token-claim-organization-param]]`link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-token-claim-organization-param[onecx.data-orchestrator.token.claim-organization-param]`
-
+a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-token-claim-organization-param]] [.property-path]##link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-token-claim-organization-param[`onecx.data-orchestrator.token.claim-organization-param`]##
 
 [.description]
 --
 Token claim organization parameter.
+
 
 ifdef::add-copy-button-to-env-var[]
 Environment variable: env_var_with_copy_button:+++ONECX_DATA_ORCHESTRATOR_TOKEN_CLAIM_ORGANIZATION_PARAM+++[]
@@ -74,16 +72,16 @@ endif::add-copy-button-to-env-var[]
 ifndef::add-copy-button-to-env-var[]
 Environment variable: `+++ONECX_DATA_ORCHESTRATOR_TOKEN_CLAIM_ORGANIZATION_PARAM+++`
 endif::add-copy-button-to-env-var[]
---|string 
+--
+|string
 |`orgId`
 
-
-a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-token-claim-organization-param-array]]`link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-token-claim-organization-param-array[onecx.data-orchestrator.token.claim-organization-param-array]`
-
+a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-token-claim-organization-param-array]] [.property-path]##link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-token-claim-organization-param-array[`onecx.data-orchestrator.token.claim-organization-param-array`]##
 
 [.description]
 --
 Token claim organization parameter array.
+
 
 ifdef::add-copy-button-to-env-var[]
 Environment variable: env_var_with_copy_button:+++ONECX_DATA_ORCHESTRATOR_TOKEN_CLAIM_ORGANIZATION_PARAM_ARRAY+++[]
@@ -91,16 +89,16 @@ endif::add-copy-button-to-env-var[]
 ifndef::add-copy-button-to-env-var[]
 Environment variable: `+++ONECX_DATA_ORCHESTRATOR_TOKEN_CLAIM_ORGANIZATION_PARAM_ARRAY+++`
 endif::add-copy-button-to-env-var[]
---|boolean 
+--
+|boolean
 |`false`
 
-
-a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-client-shared]]`link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-client-shared[onecx.data-orchestrator.client.shared]`
-
+a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-client-shared]] [.property-path]##link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-client-shared[`onecx.data-orchestrator.client.shared`]##
 
 [.description]
 --
 Set to true to share the HTTP client between REST clients.
+
 
 ifdef::add-copy-button-to-env-var[]
 Environment variable: env_var_with_copy_button:+++ONECX_DATA_ORCHESTRATOR_CLIENT_SHARED+++[]
@@ -108,16 +106,16 @@ endif::add-copy-button-to-env-var[]
 ifndef::add-copy-button-to-env-var[]
 Environment variable: `+++ONECX_DATA_ORCHESTRATOR_CLIENT_SHARED+++`
 endif::add-copy-button-to-env-var[]
---|boolean 
+--
+|boolean
 |`true`
 
-
-a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-client-connection-pool-size]]`link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-client-connection-pool-size[onecx.data-orchestrator.client.connection-pool-size]`
-
+a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-client-connection-pool-size]] [.property-path]##link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-client-connection-pool-size[`onecx.data-orchestrator.client.connection-pool-size`]##
 
 [.description]
 --
 The size of the rest client connection pool.
+
 
 ifdef::add-copy-button-to-env-var[]
 Environment variable: env_var_with_copy_button:+++ONECX_DATA_ORCHESTRATOR_CLIENT_CONNECTION_POOL_SIZE+++[]
@@ -125,16 +123,16 @@ endif::add-copy-button-to-env-var[]
 ifndef::add-copy-button-to-env-var[]
 Environment variable: `+++ONECX_DATA_ORCHESTRATOR_CLIENT_CONNECTION_POOL_SIZE+++`
 endif::add-copy-button-to-env-var[]
---|int 
+--
+|int
 |`30`
 
-
-a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-client-key-keys]]`link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-client-key-keys[onecx.data-orchestrator.client.key."keys"]`
-
+a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-client-key-keys]] [.property-path]##link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-client-key-keys[`onecx.data-orchestrator.client.key."keys"`]##
 
 [.description]
 --
 Clients key configuration
+
 
 ifdef::add-copy-button-to-env-var[]
 Environment variable: env_var_with_copy_button:+++ONECX_DATA_ORCHESTRATOR_CLIENT_KEY__KEYS_+++[]
@@ -142,8 +140,28 @@ endif::add-copy-button-to-env-var[]
 ifndef::add-copy-button-to-env-var[]
 Environment variable: `+++ONECX_DATA_ORCHESTRATOR_CLIENT_KEY__KEYS_+++`
 endif::add-copy-button-to-env-var[]
---|link:https://docs.oracle.com/javase/8/docs/api/java/lang/String.html[String]
- 
+--
+|Map<String,String>
 |
 
+a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-leader-election-lease-name]] [.property-path]##link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-leader-election-lease-name[`onecx.data-orchestrator.leader-election.lease-name`]##
+
+[.description]
+--
+Lease name
+
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++ONECX_DATA_ORCHESTRATOR_LEADER_ELECTION_LEASE_NAME+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++ONECX_DATA_ORCHESTRATOR_LEADER_ELECTION_LEASE_NAME+++`
+endif::add-copy-button-to-env-var[]
+--
+|string
+|`onecx-data-orchestrator-operator-lease`
+
 |===
+
+
+:!summaryTableId:
