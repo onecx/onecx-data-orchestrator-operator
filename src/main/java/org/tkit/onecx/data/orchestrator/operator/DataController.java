@@ -20,7 +20,7 @@ import io.javaoperatorsdk.operator.processing.event.source.filter.OnAddFilter;
 import io.javaoperatorsdk.operator.processing.event.source.filter.OnUpdateFilter;
 import io.smallrye.config.SmallRyeConfig;
 
-@ControllerConfiguration(name = "data", namespaces = WATCH_CURRENT_NAMESPACE, onAddFilter = DataController.SlotAddFilter.class, onUpdateFilter = DataController.SlotUpdateFilter.class)
+@ControllerConfiguration(name = "data", maxReconciliationInterval = @MaxReconciliationInterval(interval = Constants.NO_MAX_RECONCILIATION_INTERVAL), namespaces = WATCH_CURRENT_NAMESPACE, onAddFilter = DataController.SlotAddFilter.class, onUpdateFilter = DataController.SlotUpdateFilter.class)
 public class DataController implements Reconciler<Data>, ErrorStatusHandler<Data> {
 
     private static final Logger log = LoggerFactory.getLogger(DataController.class);

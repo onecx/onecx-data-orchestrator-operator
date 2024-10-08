@@ -49,16 +49,21 @@ app:
           fieldPath: metadata.namespace
   serviceAccount:
     enabled: true
-
   operator:
     keycloak:
       client:
         enabled: true
         spec:
           kcConfig:
-            defaultClientScopes: [ ocx-ws:write, ocx-pm-assignment:write, ocx-tn:write, ocx-th:write ]
+            defaultClientScopes: [ ocx-ws:write, ocx-pm:write, ocx-pm-assignment:write, ocx-tn:write, ocx-th:write, ocx-hp:write ]
 
-# Values: JOSDK_WATCH_CURRENT, JOSDK_ALL_NAMESPACES or comma separated list of namespaces
+----
+
+x-th:write, ocx-hp:write ]
+
+----
+
+ted list of namespaces
 watchNamespaces: "JOSDK_WATCH_CURRENT"
 ----
 
