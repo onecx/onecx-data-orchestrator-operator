@@ -6,6 +6,7 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+import io.javaoperatorsdk.operator.processing.retry.GradualRetry;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.WebApplicationException;
 import jakarta.xml.bind.DatatypeConverter;
@@ -20,6 +21,7 @@ import io.javaoperatorsdk.operator.processing.event.source.filter.OnAddFilter;
 import io.javaoperatorsdk.operator.processing.event.source.filter.OnUpdateFilter;
 import io.smallrye.config.SmallRyeConfig;
 
+@GradualRetry(intervalMultiplier = 3, initialInterval = 5000L, maxAttempts = 10, maxInterval = 300000L )
 @ControllerConfiguration(name = "data", maxReconciliationInterval = @MaxReconciliationInterval(interval = Constants.NO_MAX_RECONCILIATION_INTERVAL), namespaces = WATCH_CURRENT_NAMESPACE, onAddFilter = DataController.SlotAddFilter.class, onUpdateFilter = DataController.SlotUpdateFilter.class)
 public class DataController implements Reconciler<Data>, ErrorStatusHandler<Data> {
 
