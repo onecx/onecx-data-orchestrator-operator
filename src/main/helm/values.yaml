@@ -16,3 +16,7 @@ app:
         spec:
           kcConfig:
             defaultClientScopes: [ ocx-ws:write, ocx-pm:write, ocx-pm-assignment:write, ocx-tn:write, ocx-th:write, ocx-hp:write ]
+    microservice:
+      spec:
+        description: OneCX Data Orchestrator Operator
+        name: OneCX Data Orchestrator Operator
