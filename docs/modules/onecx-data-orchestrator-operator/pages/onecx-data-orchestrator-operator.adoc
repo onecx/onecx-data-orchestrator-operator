@@ -1,4 +1,3 @@
-:summaryTableId: onecx-data-orchestrator-operator
 [.configuration-legend]
 icon:lock[title=Fixed at build time] Configuration property fixed at build time - All other configuration properties are overridable at runtime
 [.configuration-reference.searchable, cols="80,.^10,.^10"]
@@ -9,6 +8,10 @@ h|Type
 h|Default
 
 a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-digest]] [.property-path]##link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-digest[`onecx.data-orchestrator.digest`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++onecx.data-orchestrator.digest+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -26,6 +29,10 @@ endif::add-copy-button-to-env-var[]
 |`MD5`
 
 a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-token-user-name]] [.property-path]##link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-token-user-name[`onecx.data-orchestrator.token.user-name`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++onecx.data-orchestrator.token.user-name+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -43,6 +50,10 @@ endif::add-copy-button-to-env-var[]
 |`data-orchestrator-operator`
 
 a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-token-header-param]] [.property-path]##link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-token-header-param[`onecx.data-orchestrator.token.header-param`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++onecx.data-orchestrator.token.header-param+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -60,6 +71,10 @@ endif::add-copy-button-to-env-var[]
 |`apm-principal-token`
 
 a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-token-claim-organization-param]] [.property-path]##link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-token-claim-organization-param[`onecx.data-orchestrator.token.claim-organization-param`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++onecx.data-orchestrator.token.claim-organization-param+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -77,6 +92,10 @@ endif::add-copy-button-to-env-var[]
 |`orgId`
 
 a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-token-claim-organization-param-array]] [.property-path]##link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-token-claim-organization-param-array[`onecx.data-orchestrator.token.claim-organization-param-array`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++onecx.data-orchestrator.token.claim-organization-param-array+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -94,6 +113,10 @@ endif::add-copy-button-to-env-var[]
 |`false`
 
 a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-client-shared]] [.property-path]##link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-client-shared[`onecx.data-orchestrator.client.shared`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++onecx.data-orchestrator.client.shared+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -111,6 +134,10 @@ endif::add-copy-button-to-env-var[]
 |`true`
 
 a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-client-connection-pool-size]] [.property-path]##link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-client-connection-pool-size[`onecx.data-orchestrator.client.connection-pool-size`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++onecx.data-orchestrator.client.connection-pool-size+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -128,6 +155,10 @@ endif::add-copy-button-to-env-var[]
 |`30`
 
 a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-client-key-keys]] [.property-path]##link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-client-key-keys[`onecx.data-orchestrator.client.key."keys"`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++onecx.data-orchestrator.client.key."keys"+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -145,6 +176,10 @@ endif::add-copy-button-to-env-var[]
 |
 
 a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-leader-election-lease-name]] [.property-path]##link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-leader-election-lease-name[`onecx.data-orchestrator.leader-election.lease-name`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++onecx.data-orchestrator.leader-election.lease-name+++[]
+endif::add-copy-button-to-config-props[]
+
 
 [.description]
 --
@@ -163,5 +198,3 @@ endif::add-copy-button-to-env-var[]
 
 |===
 
-
-:!summaryTableId:

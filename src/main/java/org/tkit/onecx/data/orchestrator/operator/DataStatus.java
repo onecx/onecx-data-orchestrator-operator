@@ -2,9 +2,7 @@ package org.tkit.onecx.data.orchestrator.operator;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import io.javaoperatorsdk.operator.api.ObservedGenerationAwareStatus;
-
-public class DataStatus extends ObservedGenerationAwareStatus {
+public class DataStatus {
 
     @JsonProperty("responseCode")
     private int responseCode;

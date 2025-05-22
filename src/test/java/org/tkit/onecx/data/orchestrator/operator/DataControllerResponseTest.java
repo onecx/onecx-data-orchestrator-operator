@@ -50,8 +50,9 @@ class DataControllerResponseTest extends AbstractTest {
         UpdateControl<Data> result = controller.reconcile(m, null);
         assertThat(result).isNotNull();
         assertThat(result.getResource()).isNotNull();
-        assertThat(result.getResource().getStatus()).isNotNull();
-        assertThat(result.getResource().getStatus().getStatus()).isNotNull().isEqualTo(DataStatus.Status.UNDEFINED);
+        assertThat(result.getResource()).isPresent();
+        assertThat(result.getResource().get().getStatus()).isNotNull();
+        assertThat(result.getResource().get().getStatus().getStatus()).isNotNull().isEqualTo(DataStatus.Status.UNDEFINED);
 
     }
 }
