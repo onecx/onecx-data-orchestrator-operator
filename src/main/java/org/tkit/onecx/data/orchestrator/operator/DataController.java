@@ -15,13 +15,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.tkit.onecx.data.orchestrator.operator.client.DataService;
 
+import io.javaoperatorsdk.operator.api.config.informer.Informer;
 import io.javaoperatorsdk.operator.api.reconciler.*;
 import io.javaoperatorsdk.operator.processing.event.source.filter.OnAddFilter;
 import io.javaoperatorsdk.operator.processing.event.source.filter.OnUpdateFilter;
 import io.smallrye.config.SmallRyeConfig;
 
-@ControllerConfiguration(name = "data", maxReconciliationInterval = @MaxReconciliationInterval(interval = Constants.NO_MAX_RECONCILIATION_INTERVAL), namespaces = WATCH_CURRENT_NAMESPACE, onAddFilter = DataController.SlotAddFilter.class, onUpdateFilter = DataController.SlotUpdateFilter.class)
-public class DataController implements Reconciler<Data>, ErrorStatusHandler<Data> {
+@ControllerConfiguration(name = "data", maxReconciliationInterval = @MaxReconciliationInterval(interval = Constants.NO_MAX_RECONCILIATION_INTERVAL), informer = @Informer(name = "parameter", namespaces = Constants.WATCH_CURRENT_NAMESPACE, onAddFilter = DataController.AddFilter.class, onUpdateFilter = DataController.UpdateFilter.class))
+public class DataController implements Reconciler<Data> {
 
     private static final Logger log = LoggerFactory.getLogger(DataController.class);
 
@@ -41,7 +42,7 @@ public class DataController implements Reconciler<Data>, ErrorStatusHandler<Data
 
         updateStatusPojo(data, responseCode);
         log.info("Data '{}' reconciled - updating status", data.getMetadata().getName());
-        return UpdateControl.updateStatus(data);
+        return UpdateControl.patchStatus(data);
 
     }
 
@@ -65,7 +66,7 @@ public class DataController implements Reconciler<Data>, ErrorStatusHandler<Data
         status.setStatus(DataStatus.Status.ERROR);
         status.setMessage(message);
         slot.setStatus(status);
-        return ErrorStatusUpdateControl.updateStatus(slot);
+        return ErrorStatusUpdateControl.patchStatus(slot);
     }
 
     private void updateStatusPojo(Data data, int responseCode) {
@@ -84,7 +85,7 @@ public class DataController implements Reconciler<Data>, ErrorStatusHandler<Data
         data.setStatus(result);
     }
 
-    public static class SlotAddFilter implements OnAddFilter<Data> {
+    public static class AddFilter implements OnAddFilter<Data> {
 
         @Override
         public boolean accept(Data resource) {
@@ -101,7 +102,7 @@ public class DataController implements Reconciler<Data>, ErrorStatusHandler<Data
         }
     }
 
-    public static class SlotUpdateFilter implements OnUpdateFilter<Data> {
+    public static class UpdateFilter implements OnUpdateFilter<Data> {
 
         @Override
         public boolean accept(Data newResource, Data oldResource) {
