@@ -12,6 +12,7 @@ import org.eclipse.microprofile.config.ConfigProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.tkit.onecx.data.orchestrator.operator.client.DataService;
+import org.tkit.onecx.quarkus.operator.OperatorUtils;
 
 import io.javaoperatorsdk.operator.api.config.informer.Informer;
 import io.javaoperatorsdk.operator.api.reconciler.*;
@@ -87,16 +88,18 @@ public class DataController implements Reconciler<Data> {
 
         @Override
         public boolean accept(Data resource) {
-            if (resource.getSpec() == null) {
-                return false;
+            if (resource.getSpec() != null) {
+                if (resource.getSpec().getKey() == null || resource.getSpec().getKey().isEmpty()) {
+                    return false;
+                }
+                if (resource.getSpec().getData() == null) {
+                    return false;
+                }
+                if (resource.getSpec().getData().isEmpty()) {
+                    return false;
+                }
             }
-            if (resource.getSpec().getKey() == null || resource.getSpec().getKey().isEmpty()) {
-                return false;
-            }
-            if (resource.getSpec().getData() == null) {
-                return false;
-            }
-            return !resource.getSpec().getData().isEmpty();
+            return OperatorUtils.shouldProcessAdd(resource);
         }
     }
 
@@ -104,14 +107,13 @@ public class DataController implements Reconciler<Data> {
 
         @Override
         public boolean accept(Data newResource, Data oldResource) {
-            if (newResource.getSpec() == null) {
-                return false;
-            }
-            if (newResource.getSpec().getKey() == null || newResource.getSpec().getKey().isEmpty()) {
-                return false;
-            }
-            if (newResource.getSpec().getData() == null || newResource.getSpec().getData().isEmpty()) {
-                return false;
+            if (newResource.getSpec() != null) {
+                if (newResource.getSpec().getKey() == null || newResource.getSpec().getKey().isEmpty()) {
+                    return false;
+                }
+                if (newResource.getSpec().getData() == null || newResource.getSpec().getData().isEmpty()) {
+                    return false;
+                }
             }
             if (oldResource.getStatus() == null) {
                 return true;
@@ -119,7 +121,10 @@ public class DataController implements Reconciler<Data> {
             if (oldResource.getStatus().getChecksum() == null) {
                 return true;
             }
-            return !oldResource.getStatus().getChecksum().equals(createCheckSum(newResource.getSpec().getData()));
+            if (!oldResource.getStatus().getChecksum().equals(createCheckSum(newResource.getSpec().getData()))) {
+                return true;
+            }
+            return OperatorUtils.shouldProcessUpdate(newResource, oldResource);
         }
     }
 
