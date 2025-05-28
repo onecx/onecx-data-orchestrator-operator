@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class DataStatus {
 
+    @JsonProperty("observedGeneration")
+    private Long observedGeneration;
+
     @JsonProperty("responseCode")
     private int responseCode;
 
@@ -59,4 +62,7 @@ public class DataStatus {
         this.message = message;
     }
 
+    public Long getObservedGeneration() {
+        return observedGeneration;
+    }
 }
