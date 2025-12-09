@@ -1,1 +1,0 @@
-* xref:onecx-data-orchestrator-operator:index.adoc[Operator]
