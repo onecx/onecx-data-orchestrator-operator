@@ -26,7 +26,7 @@ Environment variable: `+++ONECX_DATA_ORCHESTRATOR_DIGEST+++`
 endif::add-copy-button-to-env-var[]
 --
 |string
-|`MD5`
+|`+++MD5+++`
 
 a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-token-user-name]] [.property-path]##link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-token-user-name[`onecx.data-orchestrator.token.user-name`]##
 ifdef::add-copy-button-to-config-props[]
@@ -47,7 +47,7 @@ Environment variable: `+++ONECX_DATA_ORCHESTRATOR_TOKEN_USER_NAME+++`
 endif::add-copy-button-to-env-var[]
 --
 |string
-|`data-orchestrator-operator`
+|`+++data-orchestrator-operator+++`
 
 a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-token-header-param]] [.property-path]##link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-token-header-param[`onecx.data-orchestrator.token.header-param`]##
 ifdef::add-copy-button-to-config-props[]
@@ -68,7 +68,7 @@ Environment variable: `+++ONECX_DATA_ORCHESTRATOR_TOKEN_HEADER_PARAM+++`
 endif::add-copy-button-to-env-var[]
 --
 |string
-|`apm-principal-token`
+|`+++apm-principal-token+++`
 
 a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-token-claim-organization-param]] [.property-path]##link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-token-claim-organization-param[`onecx.data-orchestrator.token.claim-organization-param`]##
 ifdef::add-copy-button-to-config-props[]
@@ -89,7 +89,7 @@ Environment variable: `+++ONECX_DATA_ORCHESTRATOR_TOKEN_CLAIM_ORGANIZATION_PARAM
 endif::add-copy-button-to-env-var[]
 --
 |string
-|`orgId`
+|`+++orgId+++`
 
 a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-token-claim-organization-param-array]] [.property-path]##link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-token-claim-organization-param-array[`onecx.data-orchestrator.token.claim-organization-param-array`]##
 ifdef::add-copy-button-to-config-props[]
@@ -110,7 +110,7 @@ Environment variable: `+++ONECX_DATA_ORCHESTRATOR_TOKEN_CLAIM_ORGANIZATION_PARAM
 endif::add-copy-button-to-env-var[]
 --
 |boolean
-|`false`
+|`+++false+++`
 
 a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-client-shared]] [.property-path]##link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-client-shared[`onecx.data-orchestrator.client.shared`]##
 ifdef::add-copy-button-to-config-props[]
@@ -131,7 +131,7 @@ Environment variable: `+++ONECX_DATA_ORCHESTRATOR_CLIENT_SHARED+++`
 endif::add-copy-button-to-env-var[]
 --
 |boolean
-|`true`
+|`+++true+++`
 
 a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-client-connection-pool-size]] [.property-path]##link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-client-connection-pool-size[`onecx.data-orchestrator.client.connection-pool-size`]##
 ifdef::add-copy-button-to-config-props[]
@@ -152,7 +152,7 @@ Environment variable: `+++ONECX_DATA_ORCHESTRATOR_CLIENT_CONNECTION_POOL_SIZE+++
 endif::add-copy-button-to-env-var[]
 --
 |int
-|`30`
+|`+++30+++`
 
 a| [[onecx-data-orchestrator-operator_onecx-data-orchestrator-client-key-keys]] [.property-path]##link:#onecx-data-orchestrator-operator_onecx-data-orchestrator-client-key-keys[`onecx.data-orchestrator.client.key."keys"`]##
 ifdef::add-copy-button-to-config-props[]
@@ -194,7 +194,7 @@ Environment variable: `+++ONECX_DATA_ORCHESTRATOR_LEADER_ELECTION_LEASE_NAME+++`
 endif::add-copy-button-to-env-var[]
 --
 |string
-|`onecx-data-orchestrator-operator-lease`
+|`+++onecx-data-orchestrator-operator-lease+++`
 
 |===
 
