@@ -67,7 +67,3 @@ app:
         name: OneCX Data Orchestrator Operator
 ----
 
-ption: OneCX Data Orchestrator Operator
-        name: OneCX Data Orchestrator Operator
-----
-
