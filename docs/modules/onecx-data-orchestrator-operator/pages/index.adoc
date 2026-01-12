@@ -1,10 +1,9 @@
 include::onecx-data-orchestrator-operator-attributes.adoc[opts=optional]
 
-== onecx-data-orchestrator-operator
+= OneCX Data Orchestrator Operator
 
-include::docs.adoc[opts=optional]
 
-=== Configuration
+== Configuration
 include::onecx-data-orchestrator-operator.adoc[opts=optional]
 
 include::onecx-data-orchestrator-operator-docs.adoc[opts=optional]
