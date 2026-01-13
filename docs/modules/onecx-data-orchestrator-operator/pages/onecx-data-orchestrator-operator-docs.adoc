@@ -1,10 +1,12 @@
 
 include::onecx-data-orchestrator-operator-attributes.adoc[opts=optional]
 
-=== Default properties
+{docker-registry}[Link to Docker registry]
+
+== Default properties
 
 .{properties-file}
-[%collapsible%open]
+[%collapsible]
 ====
 [source,properties,subs=attributes+]
 ----
@@ -25,22 +27,18 @@ quarkus.kubernetes-client.devservices.override-kubeconfig=true
 ----
 ====
 
-=== Extensions
-
+== Extensions
+.Extensions List
+[%collapsible]
+====
 include::onecx-data-orchestrator-operator-extensions.adoc[opts=optional]
+====
 
-=== Container
+== Helm
 
-{docker-registry}[Docker registry]
+{helm-registry}[Link to Helm registry]
 
-
-=== Helm
-
-{helm-registry}[Helm registry]
-
-Default values
-
-.{helm-file}
+.Default values in {helm-file}
 [source,yaml]
 ----
 app:
@@ -66,4 +64,3 @@ app:
         description: OneCX Data Orchestrator Operator
         name: OneCX Data Orchestrator Operator
 ----
-
