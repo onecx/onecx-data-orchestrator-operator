@@ -1,2 +1,3 @@
 # onecx-data-orchestrator-operator
-OneCx data orchestrator k8s operator
+
+OneCX Data Orchestrator K8s Operator
