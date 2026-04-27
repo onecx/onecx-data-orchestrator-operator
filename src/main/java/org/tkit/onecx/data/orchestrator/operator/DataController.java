@@ -72,14 +72,18 @@ public class DataController implements Reconciler<Data> {
         var result = new DataStatus();
         result.setResponseCode(responseCode);
         result.setChecksum(createCheckSum(data.getSpec().getData()));
-        var status = switch (responseCode) {
+        var status = DataStatus.Status.UNDEFINED;
+        switch (responseCode) {
             case 201:
-                yield DataStatus.Status.CREATED;
+                status = DataStatus.Status.CREATED;
+                break;
             case 200:
-                yield DataStatus.Status.UPDATED;
+                status = DataStatus.Status.UPDATED;
+                break;
             default:
-                yield DataStatus.Status.UNDEFINED;
-        };
+                status = DataStatus.Status.UNDEFINED;
+        }
+        ;
         result.setStatus(status);
         data.setStatus(result);
     }
