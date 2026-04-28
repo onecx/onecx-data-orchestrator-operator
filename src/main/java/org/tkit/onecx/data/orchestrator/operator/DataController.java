@@ -55,7 +55,7 @@ public class DataController implements Reconciler<Data> {
             responseCode = re.getResponse().getStatus();
             message = re.getResponse().readEntity(String.class);
         }
-        if (e.getCause() instanceof DataService.MissingKeyConfiguration me) {
+        if (e instanceof DataService.MissingKeyConfiguration me) {
             message = me.getMessage();
         }
 
@@ -72,18 +72,11 @@ public class DataController implements Reconciler<Data> {
         var result = new DataStatus();
         result.setResponseCode(responseCode);
         result.setChecksum(createCheckSum(data.getSpec().getData()));
-        var status = DataStatus.Status.UNDEFINED;
-        switch (responseCode) {
-            case 201:
-                status = DataStatus.Status.CREATED;
-                break;
-            case 200:
-                status = DataStatus.Status.UPDATED;
-                break;
-            default:
-                status = DataStatus.Status.UNDEFINED;
-        }
-        ;
+        var status = switch (responseCode) {
+            case 201 -> DataStatus.Status.CREATED;
+            case 200 -> DataStatus.Status.UPDATED;
+            default -> DataStatus.Status.UNDEFINED;
+        };
         result.setStatus(status);
         data.setStatus(result);
     }
