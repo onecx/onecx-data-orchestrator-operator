@@ -1,10 +1,10 @@
 package org.tkit.onecx.data.orchestrator.operator;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import org.junit.jupiter.api.Test;
 
 import io.quarkus.test.junit.QuarkusTest;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 @QuarkusTest
 class DataControllerFilterTest extends AbstractTest {
